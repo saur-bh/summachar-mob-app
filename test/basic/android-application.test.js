@@ -76,7 +76,7 @@ describe('Create Android session', function () {
   });
   
 
-  it.only('Search item in the app is working',async function(){
+  it('Search item in the app is working',async function(){
 
     const searchbtn = await client.$('//android.widget.ImageView[@resource-id="in.summachar.summachar:id/search"]'); 
     await searchbtn.click()
