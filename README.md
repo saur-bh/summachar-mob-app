@@ -1,4 +1,4 @@
-# Summachar mobile application testing using webDriverio
+# Summachar mobile application testing using webdriverIO
 
 The test is conducted on real android device (RealMe 8 Pro). 
 
@@ -17,6 +17,9 @@ The test is conducted on real android device (RealMe 8 Pro).
 3. User can login via Email 
 4. User can login via phone number
 5. User can perform Search 
+
+## Demo 
+
 
 ## Setup
 
