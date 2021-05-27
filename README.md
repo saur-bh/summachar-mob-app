@@ -1,4 +1,4 @@
-# Javascript WebdriverIO Client Sample Code
+# Summachar mobile application testing using webDriverio
 
 ## Setup
 
