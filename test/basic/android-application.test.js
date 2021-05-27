@@ -64,12 +64,33 @@ describe('Create Android session', function () {
     await enterPhText.setValue('9739992722')
     const getOTP =  await client.$('//android.widget.Button[@resource-id="in.summachar.summachar:id/btn_get_otp"]'); 
     await getOTP.click();
-    //client.setTimeout({ 'implicit': 15000 })
-    const profilePage =  await client.$('//android.widget.TextView[@index="0"]'); 
+    await client.setTimeout({ 'implicit': 20000 })
+    const profilePage =  await client.$('//android.widget.TextView[@resource-id="in.summachar.summachar:id/welcome_text"]'); 
+    //await getOTP.click();
     const expectedRes = await profilePage.getText();
-    assert.equal(expectedRes, 'Complete your Profile');
+    assert.equal(expectedRes, 'Welcome Back!');
+    //await client.$('//android.widget.Button[@resource-id="in.summachar.summachar:id/btn_continue"]');
+    const letBtn= await client.$('//android.widget.Button[@text="LET\'S GO!"]')
+    await letBtn.click();
     
-    
+  });
+  
+
+  it.only('Search item in the app is working',async function(){
+
+    const searchbtn = await client.$('//android.widget.ImageView[@resource-id="in.summachar.summachar:id/search"]'); 
+    await searchbtn.click()
+    const typeSearch = await client.$('//android.widget.EditText[@resource-id="in.summachar.summachar:id/search_view"]'); 
+    await typeSearch.setValue('Test')
+    //await typeSearch.click()
+    await client.pressKeyCode(84)
+    const clickCancel = await client.$('//android.widget.TextView[@resource-id="in.summachar.summachar:id/cancel"]'); 
+    await clickCancel.click()
+
+
+
+
+
   });
 
 
